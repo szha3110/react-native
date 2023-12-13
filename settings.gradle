@@ -1,0 +1,35 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            name = "GitHubPackages"
+            /*  Configure path to the library hosted on GitHub Packages Registry
+             *  Replace UserID with package owner userID and REPOSITORY with the repository name
+             *  e.g. "https://maven.pkg.github.com/enefce/AndroidLibraryForGitHubPackagesDemo"
+             */
+            //url = uri("https://maven.pkg.github.com/UserID/REPOSITORY")
+            url = uri("https://maven.pkg.github.com/szha3110/android-library")
+
+            credentials {
+                /**Create github.properties in root project folder file with gpr.usr=GITHUB_USER_ID  & gpr.key =PERSONAL_ACCESS_TOKEN**/
+                username = 'szha3110'
+                password = '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'
+            }
+        }
+    }
+
+}
+
+rootProject.name = "react-native-android"
+include ':app'
+include ':react-native-library'
+include ':app:rnlibrary'
